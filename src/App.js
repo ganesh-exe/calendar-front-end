@@ -91,7 +91,7 @@ function App() {
 var localdate={
   date:(`${e.getDate()} / ${e.getMonth()+1} / ${e.getFullYear()}`)
 }
-    axios.post('http://localhost:2602/getEvents',localdate).then(res=>{setListOfAppointments(res.data)
+    axios.post('http://ganesh-calendar-back-end.herokuapp.com/getEvents',localdate).then(res=>{setListOfAppointments(res.data)
   console.log(res.data)})
   }
   return (
@@ -175,7 +175,7 @@ var localdate={
           timeZone:selectedTimezone,
           description:appointmentContent,
       }
-       axios.post('http://localhost:2602/addEvent',localAppointement).then(res=>{
+       axios.post('http://ganesh-calendar-back-end.herokuapp.com/addEvent',localAppointement).then(res=>{
          if(res.data)
          alert("Added successfully")
        })
